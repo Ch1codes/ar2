@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location-Based AR.js</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-ar.js/dist/aframe-ar.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-gps-component/dist/aframe-gps-camera.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs>
+    <!-- GPS Camera -->
+    <a-entity gps-camera="simulateLatitude: 27.670704; simulateLongitude: 85.439104"></a-entity>
+    
+    <!-- 3D Arrow at a specific GPS location -->
+    <a-entity 
+      geometry="primitive: cone; radiusBottom: 0.5; radiusTop: 0; height: 1;" 
+      material="color: red;" 
+      gps-entity-place="latitude: 27.670704; longitude: 85.439104 "
+      position="0 0 0"
+      rotation="-90 0 0">
+    </a-entity>
+  </a-scene>
+</body>
+</html>
